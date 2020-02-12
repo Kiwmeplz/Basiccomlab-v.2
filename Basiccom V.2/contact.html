@@ -111,57 +111,75 @@
       </h1>
     </section>
 
-    <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-            <div class="box-body">
-               <div class="box-body">
-                <table width="80%" align="center" style="padding: 15px;">
-           
-                    <tbody><tr>
-                        <td><h3><label>หัวข้อ:</label></h3></td>
-                        <td><input type="text" name="subject" value="" width="50px"> </td>
-                    </tr>
-                    <tr>
-                        <td><h3> <label>ข้อความ:</label></h3></td>
-                        <td> <textarea name="msg"></textarea> </td>
-                    </tr>
-                    <tr>
-                        <td><h3><label>ชื่อ:</label></h3></td>
-                        <td><input type="text" name="fullname" value=""> </td>
-                    </tr>
-                    <tr>
-                        <td><h3><label>เพศ:</label></h3></td>
-                        <td>
-                            <input type="radio" name="gender" value="male"> ชาย 
-                            <input type="radio" name="gender" value="female"> หญิง
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h3><label>เบอร์โทร:</label></h3></td>
-                        <td><input type="tel" name="phone" value=""> </td>
-                    </tr>
-                    <tr>
-                        <td><h3><label>Email:</label></h3></td>
-                        <td><input type="email" value=""></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" name="ส่ง" value="ส่ง"></td>
-                    </tr>
-        
-                    
-                </tbody></table>
+      <div class="small-box bg-black">
+        <div class="inner">
+          <div class="row">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                </div>
+                <!-- /.box-header -->
+                <canvas id="pieChart" style="height: 50px!important; width: 51px!important;" height="100" width="202"></canvas>
+            
+                <!-- form start -->
+                <form role="form">
+                  <div  class="box-body">
+                    <div class="form-group">
+                      <label style="color: black;">ชื่อจริง(first Name)</label>
+                      <input type="text" class="form-control" id="firstname" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label style="color: black;">นามสกุล(Last Name)</label>
+                      <input type="text" class="form-control" id="lastname" placeholder="">
+                    </div>
+                      <div class="form-group">
+                        <label style="color: black;">อีเมล์(Email)</label>
+                        <input type="email" class="form-control" id="email" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label style="color: black;"><span>เพศ(gender)</span></label>
+                        <div class="radio">
+                          <label style="color: black;">
+                            <input type="radio" name="optionsRadios" id="male" value="ชาย" checked="">
+                            ชาย
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label style="color: black;">
+                            <input type="radio" name="optionsRadios" id="femail" value="หญิง">
+                            หญิง
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label style="color: black;">
+                            <input type="radio" name="optionsRadios" id="other" value="อื่นๆ" >
+                            อื่นๆ
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label style="color: black;">รายละเอียด(detail)</label>
+                        <br>
+                        <textarea  rows="10" cols="100" id="detail"></textarea>
+                      </div>
+                  </div>
+                  <!-- /.box-body -->
+    
+                  <div class="box-footer">
+                    <button id="save" class="btn btn-primary">Submit</button>
+                    <button id="reset" type="reset" class="btn btn-danger">Reset</button>
+                  </div>
+                </form>
               </div>
+          </div>
         </div>
-        <!-- /.box-body -->
-        
       </div>
-      <!-- /.box -->
-    </section>
+      <div id="contact">
+        <div class="row">
+        </div>
+      </div>
+     
+  </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -382,6 +400,15 @@
     <!-- FastClick -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js" integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs=" crossorigin="anonymous"></script>
     <!-- AdminLTE App -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
+    <script src="dist/js/pages/submit.js"></script>
+
+
 </body>
 </html>
